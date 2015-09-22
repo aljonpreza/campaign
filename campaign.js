@@ -5,7 +5,7 @@ var sampleData = campaignContributions.slice(0, 10);
 
 
 function groupCampaign(data) {
-  return _.groupBy(data, 'Party');
+  return _.pick(data, 'Party', 'Amount');
 }
 
 function currencyToNum(currencyString) {
@@ -19,4 +19,4 @@ function addTotal(memo, cont) {
 
 
 
-console.log(meep(campaignContributions));
+console.log(groupCampaign(campaignContributions));
